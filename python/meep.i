@@ -1779,6 +1779,7 @@ PyObject *_get_array_slice_dimensions(meep::fields *f, const meep::volume &where
     if with_mpi():
         try:
             from mpi4py import MPI
+            MPI.Startup()
         except ImportError as e:
             print('\n**\n** failed to load python MPI module (mpi4py)\n**', e, '\n**\n')
             pass
